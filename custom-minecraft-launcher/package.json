@@ -1,0 +1,68 @@
+{
+  "name": "custom-minecraft-launcher",
+  "version": "0.1.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "npx electron .",
+    "build": "npx tsc",
+    "watch": "npx tsc -w",
+    "pack": "npm run build && npx electron-builder --dir",
+    "dist": "npm run build && npx electron-builder",
+    "dist:win": "npm run build && npx electron-builder --win",
+    "dist:linux": "npm run build && npx electron-builder --linux",
+    "dist:mac": "npm run build && npx electron-builder --mac"
+  },
+  "dependencies": {
+    "electron": "^36.2.1",
+    "find-java-home": "^2.0.0",
+    "electron-store": "8.1.0",
+    "@xmcl/installer": "^5.0.0",
+    "@xmcl/minecraft-launcher-core": "^5.0.0", 
+    "@xmcl/task": "^3.0.0",
+    "@xmcl/core": "^5.0.0" 
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^18.0.0",
+    "@types/electron": "^1.6.10",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.crrplauncher.app",
+    "productName": "CRRP Launcher",
+    "copyright": "Copyright © 2024 Criminal Russia RP",
+    "directories": {
+      "output": "release",
+      "buildResources": "build_assets"
+    },
+    "files": [
+      "dist/**/*",
+      "src/index.html",
+      "src/settings.html",
+      "src/style.css",
+      "src/settings.css",
+      "src/assets/**/*",
+      "!node_modules/@types/**", 
+      "node_modules/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build_assets/icon.png"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "build_assets/icon.png",
+      "category": "Game"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build_assets/icon.png",
+      "category": "public.app-category.games"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false 
+    }
+  }
+}

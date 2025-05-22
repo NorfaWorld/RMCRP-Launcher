@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Launcher Settings</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="settings-container">
+        <h1>Launcher Settings</h1>
+        
+        <div class="setting-item">
+            <label for="minecraft-path">Minecraft Data Path:</label>
+            <input type="text" id="minecraft-path" name="minecraft-path">
+            <button id="browse-path-button" class="browse-button">Browse...</button>
+            <p class="description">The directory where Minecraft versions, assets, and other game data will be stored.</p>
+        </div>
+
+        <div class="setting-item">
+            <label for="max-memory">Maximum RAM Allocation (MB):</label>
+            <input type="number" id="max-memory" name="max-memory" min="512" step="256">
+            <p class="description">The maximum amount of RAM Minecraft can use. Recommended: 2048MB for vanilla, more for modded.</p>
+        </div>
+
+        <div class="setting-actions">
+            <button id="save-settings-button" class="action-button save-button">Save & Close</button>
+            <button id="cancel-settings-button" class="action-button cancel-button">Cancel</button>
+        </div>
+    </div>
+    <script src="../dist/settings_renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CRRP Launcher</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/logo.png" alt="CRRP Logo" id="launcher-logo"> 
+            <h1>CRRP Launcher</h1>
+        </header>
+        <main>
+            <section class="news-panel">
+                <h2>Welcome to Criminal Russia RP!</h2>
+                <p>Stay updated with the latest server news, events, and announcements right here. Our team is working hard to bring you the best RP experience. Don't forget to join our Discord and read the server rules!</p>
+                <p><em>Current placeholder news. Actual news content will be fetched or managed dynamically.</em></p>
+            </section>
+            <section class="server-status-panel">
+                <h2>Server Status</h2>
+                <p>Checking server status for CRRP (localhost:25565)...</p>
+                <!-- Server status will go here -->
+            </section>
+        </main>
+        <footer>
+            <div class="footer-left">
+                <button id="settings-button" class="footer-icon-button" title="Settings">⚙️</button>
+            </div>
+            <div id="minecraft-progress-container">
+                <div id="minecraft-progress-message">Launcher Ready</div>
+                <div id="minecraft-progress-bar-outer">
+                    <div id="minecraft-progress-bar-inner"></div>
+                </div>
+            </div>
+            <div class="footer-right">
+                <button id="play-button" disabled>Play / Install Minecraft</button>
+            </div>
+             <div id="java-status"> <!-- Moved for better layout if footer-left/right are used -->
+                Java Status: Initializing...
+            </div>
+        </footer>
+    </div>
+    <script src="../dist/renderer.js"></script>
+</body>
+</html>
